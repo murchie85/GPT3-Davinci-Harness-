@@ -1,25 +1,25 @@
-body {
-    background-color: #333;
-    color: #fff;
-}
+body { background-color: #333; color: #fff; } 
 
-#question-form {
+#question-form { 
+    margin: auto;
     margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+
+} 
+
+#question-form input, #question-form button {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-#response, #history {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #fff;
-    border-radius: 5px;
-}
+#response, #history { margin-top: 20px; padding: 20px; border: 1px solid #fff; border-radius: 5px; } 
 
-#history {
-    height: 300px;
-    overflow-y: scroll;
-}
+#history { height: 300px; overflow-y: scroll; } 
 
-p {
-    margin: 0;
-    padding: 0;
-}
+p { margin: 0; padding: 0; } 
+
+/* Additions */ #question-form, #response, #history { box-sizing: border-box; }

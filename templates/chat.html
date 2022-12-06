@@ -4,13 +4,23 @@
     <title>Chat</title>
     <link rel="stylesheet" href="static/css/style.css" />
 </head>
+
+
 <body>
     <h1>Chat</h1>
+
+    <div id="loading" style="display: none;">
+        Loading...
+    </div>
 
     <form id="question-form">
         <label>Enter your question:</label>
         <input type="text" id="question" name="question" />
         <input type="submit" value="Submit" />
+    </form>
+
+    <form action="/shutdown" method="get">
+        <button type="submit">Shut Down</button>
     </form>
 
     <div id="response"></div>
@@ -19,9 +29,12 @@
     <div id="history"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
     <script>
         $(document).ready(function() {
             $('#question-form').submit(function(event) {
+                document.getElementById('loading').style.display = 'block';
                 event.preventDefault();
 
                 $.ajax({
@@ -29,6 +42,7 @@
                     url: '/conversation',
                     data: $(this).serialize(),
                     success: function(response) {
+                        document.getElementById('loading').style.display = 'none';
                         // Access the first element of the 'choices' array and the 'text' property
                         var chatbotResponse = response['choices'][0]['text'];
 
@@ -42,6 +56,12 @@
                 });
             });
         });
+
+
+
+
     </script>
+
+
 </body>
 </html>
