@@ -1,0 +1,25 @@
+body {
+    background-color: #333;
+    color: #fff;
+}
+
+#question-form {
+    margin-bottom: 20px;
+}
+
+#response, #history {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+#history {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}

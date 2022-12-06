@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+    <h1>Chat</h1>
+
+    <form id="question-form">
+        <label>Enter your question:</label>
+        <input type="text" id="question" name="question" />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <div id="response"></div>
+
+    <h2>Conversation History</h2>
+    <div id="history"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#question-form').submit(function(event) {
+                event.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/conversation',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        // Access the first element of the 'choices' array and the 'text' property
+                        var chatbotResponse = response['choices'][0]['text'];
+
+                        // Set the text of the 'response' div to the chatbot's response
+                        $('#response').text(chatbotResponse);
+
+                        // Append the user's question and the chatbot's response to the 'history' div
+                        $('#history').append($('<p>').text($('#question').val()));
+                        $('#history').append($('<p>').text(chatbotResponse));
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
