@@ -1,6 +1,6 @@
-## GPT-3 Chat
+## Python Flask Harness for GPT-3 Chat
 
-This is a simple Flask application that allows users to chat with GPT-3 using the `text-davinci-003` model. The application has a chat page that takes user input and generates a response from GPT-3, and it also stores the conversation data in a file for later analysis.
+This is a `simple Flask` application that allows users to chat with GPT-3 using the `text-davinci-003` model. The application has a chat page that takes user input and generates a response from GPT-3, and it also stores the conversation data in a file for later analysis.
 
 The code uses the [OpenAI](https://openai.com/) Python library to interact with the GPT-3 model and generate responses.
 
