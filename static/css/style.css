@@ -1,5 +1,5 @@
-body { background-color: #333; color: #fff; } 
-
+body { background-color: #282a36; color: #fff; } 
+h1, h2, h3, h4, h5, h6 { color: #f8f8f2; } 
 #question-form { 
     margin: auto;
     margin-bottom: 20px;
@@ -16,10 +16,12 @@ body { background-color: #333; color: #fff; }
     border-radius: 10px;
 }
 
-#response, #history { margin-top: 20px; padding: 20px; border: 1px solid #fff; border-radius: 5px; } 
+#response, #history { margin-top: 20px; padding: 20px; border: 1px solid #fff; border-radius: 5px; font-size: 30;height: 100px;  background-color: #373a4f;font-family: Tahoma, sans-serif;} 
 
-#history { height: 300px; overflow-y: scroll; } 
+#response { height: 220px; overflow-y: scroll; } 
+#history { height: 400px; overflow-y: scroll; } 
 
 p { margin: 0; padding: 0; } 
 
 /* Additions */ #question-form, #response, #history { box-sizing: border-box; }
+

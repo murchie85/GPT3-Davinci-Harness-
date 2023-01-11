@@ -15,7 +15,7 @@
 
     <form id="question-form">
         <label>Enter your question:</label>
-        <input type="text" id="question" name="question" />
+        <input type="text" id="question" name="question" size="120"  style="height: 100px;"/>
         <input type="submit" value="Submit" />
     </form>
 
@@ -28,6 +28,11 @@
     <h2>Conversation History</h2>
     <div id="history"></div>
 
+    <form action="/save" method="POST">
+        <input type="text" name="name" placeholder="Enter a name" />
+        <input type="submit" value="save" />
+    </form>
+        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -43,15 +48,17 @@
                     data: $(this).serialize(),
                     success: function(response) {
                         document.getElementById('loading').style.display = 'none';
+                        
                         // Access the first element of the 'choices' array and the 'text' property
-                        var chatbotResponse = response['choices'][0]['text'];
+                        var chatbotResponse = response['formatted'];
 
                         // Set the text of the 'response' div to the chatbot's response
-                        $('#response').text(chatbotResponse);
+                        $('#response').html(chatbotResponse);
 
                         // Append the user's question and the chatbot's response to the 'history' div
-                        $('#history').append($('<p>').text($('#question').val()));
-                        $('#history').append($('<p>').text(chatbotResponse));
+                        // history is a var
+                        $('#history').append($('<p>').html($('#question').val()));
+                        $('#history').append($('<p>').html(chatbotResponse));
                     }
                 });
             });

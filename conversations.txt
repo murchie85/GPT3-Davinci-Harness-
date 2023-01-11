@@ -1,0 +1,16 @@
+Question 
+hi
+
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Hi!\n");
+    return 0;
+}
+Question 
+is chatgpt better than gpt3?
+
+
+It is difficult to say which is better, as both GPT-3 and ChatGPT have their own strengths and weaknesses. GPT-3 is a powerful language model that can generate text with impressive accuracy, while ChatGPT is designed to generate more natural-sounding conversations. Ultimately, it depends on the specific task you are trying to accomplish.
